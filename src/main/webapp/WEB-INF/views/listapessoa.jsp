@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -135,20 +137,26 @@
                 
             <br>
 
-            <!-- Pessoa -->
-            <div class="col-xs-2 col-md-2">
+            <c:forEach var="pessoa" items="${pessoas}">
+      			
+	            <!-- Pessoa -->
+	            <div class="col-xs-2 col-md-2">
+	
+	                <!-- Foto da pessoa -->
+	                <div>
+	                  <a href="#" class="miniatura">
+	                    <img src="..." alt="Photo Pessoa" style="min-height:150px;height:150px">
+	                  </a>
+	                </div><!-- /Foto da pessoa -->
+	                
+	                <!-- Dados da pessoa -->
+	                <div>
+	                  <h4 class="text-center">${pessoa.username}</h4>
+	                </div><!-- /Dados da pessoa -->
 
-                <!-- Foto da pessoa -->
-                <div>
-                  <a href="#" class="miniatura">
-                    <img src="..." alt="Photo Pessoa" style="min-height:150px;height:150px">
-                  </a>
-                </div><!-- /Foto da pessoa -->
-                
-                <!-- Dados da pessoa -->
-                <div>
-                  <h4 class="text-center">Nome da Pessoa</h4>
-                </div><!-- /Dados da pessoa -->
+	                
+	              </div><!-- /Pessoa -->
+	              </c:forEach>
 
                 
               </div><!-- Pessoa -->

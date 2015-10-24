@@ -9,11 +9,10 @@ import br.com.gamesbag.jdbc.dao.PessoaDao;
 @Controller
 public class ListaController {
 
-	@RequestMapping("listaTarefas")
+	@RequestMapping("listaPessoas")
 	public String lista(Model model) {
-		PessoaDao dao = new PessoaDao();
-		model.addAttribute("tarefas", dao.getLista());
-		return "tarefa/lista";
-
+	  PessoaDao dao = new PessoaDao();
+	  model.addAttribute("pessoas", dao.getLista());
+	  return "listapessoa";
 	}
 }
