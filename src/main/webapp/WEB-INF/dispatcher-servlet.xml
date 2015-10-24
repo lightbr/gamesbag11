@@ -26,5 +26,8 @@
     class="br.com.gamesbag.jdbc.interceptor.AutorizadorInterceptor" />
 	</mvc:interceptors>
 	 
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<mvc:annotation-driven />
 
 </beans>

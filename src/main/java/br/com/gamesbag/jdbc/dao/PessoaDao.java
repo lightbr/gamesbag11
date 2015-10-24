@@ -45,7 +45,7 @@ public final class PessoaDao {
 
 	public List<Pessoa> getLista() {
 		try {
-			List<Pessoa> pessoas = new ArrayList<>();
+			List<Pessoa> pessoas = new ArrayList<Pessoa>();
 			PreparedStatement stmt = this.connection.
 					prepareStatement("select * from pessoa");
 			ResultSet rs = stmt.executeQuery();

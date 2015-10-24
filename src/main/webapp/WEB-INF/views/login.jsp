@@ -27,7 +27,7 @@
       <div class="col-md-4 col-md-offset-4">
         <form class="form-signin" action="efetuaLogin" method="post">
           <h2 class="form-signin-heading text-center">Seja bem-vindo ao Games Bag!</h2>
-          <label for="inputEmail">EndereÃ§o de email</label>
+          <label for="inputEmail">Endereço de email</label>
           <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required autofocus>
           <p></p>
           <label for="inputPassword">Senha</label>

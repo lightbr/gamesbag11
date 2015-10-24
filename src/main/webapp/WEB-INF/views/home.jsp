@@ -16,6 +16,7 @@
     <!-- Bootstrap -->
     <link type="text/css" href="resources/css/bootstrap.min.css" rel="stylesheet" />
     <link type="text/css" href="resources/esqueleto.css" rel="stylesheet"  />
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
