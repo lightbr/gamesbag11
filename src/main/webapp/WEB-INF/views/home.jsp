@@ -105,7 +105,7 @@
                 <p>
                   <button type="button" class="btn btn-success btn-block">Configurações</button>
                 </p>
-                <button type="button" class="btn btn-success btn-block" href="logout">Logout</button>
+                <a href="logout" class="btn btn-success btn-block" role="button">Logout</a>
               </div>
             </div><!-- /Grupo de botões 3 -->
           </div><!-- /Menu lateral -->
