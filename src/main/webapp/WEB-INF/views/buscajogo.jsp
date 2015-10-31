@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -9,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>GamesBag</title>
 
     <link rel="stylesheet" type="text/css" href="resources/esqueleto.css">
@@ -30,23 +33,9 @@
 
       <!-- Navbar -->
       <nav class="navbar navbar-success">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="google.com">Games Bag</a>
-        </div>
-        <div class="collapse navbar-collapse navbar-center" id="bs-example-navbar-collapse-1">
-          <form class="navbar-form" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Buscar no Games Bag">
-            </div>
-            <button type="submit" class="btn btn-success">Buscar</button>
-          </form>
-        </div>
+       
+      	<c:import url="navbar.jsp" />
+      	
       </nav><!-- /Navbar -->
 
 
@@ -59,58 +48,13 @@
           <!-- Menu-lateral -->
           <div id="menu_lateral">
 
-            <!-- Foto de perfil -->
-            <div>
-              <a href="#" class="thumbnail">
-                <img src="..." alt="Photo Perfil" style="min-height:250px;height:250px">
-              </a>
-            </div>
-
-            <!-- Grupo de botões 1 -->
-            <div class="panel panel-success">
-              <div class="panel-heading">Lista de Jogos</div>
-              <div class="panel-body">
-                <p>
-                  <button type="button" class="btn btn-success btn-block">Quero Jogar</button>
-                </P>
-                <p>
-                  <button type="button" class="btn btn-success btn-block">Joguei</button>
-                </p>
-                <p>
-                  <button type="button" class="btn btn-success btn-block">Jogando</button>
-                </p>
-                <button type="button" class="btn btn-success btn-block">Terminei</button>
-              </div>
-            </div> <!-- /Grupo de botões 1 -->
-
-            <!-- Grupo de botões 2 -->
-            <div class="panel panel-success">
-              <div class="panel-heading">Lista de Usuário</div>
-              <div class="panel-body">
-                <p>
-                  <button type="button" class="btn btn-success btn-block">Seguindo</button>
-                </p>
-                <p>
-                  <button type="button" class="btn btn-success btn-block">Seguidores</button>
-                </p>
-                <button type="button" class="btn btn-success btn-block">Buscar Usuários</button>
-              </div>
-            </div> <!-- /Grupo de botões 2 -->
-
-            <!-- Grupo de botões 3 -->
-            <div class="panel panel-success">
-              <div class="panel-body">
-                <p>
-                  <button type="button" class="btn btn-success btn-block">Configurações</button>
-                </p>
-                <button type="button" class="btn btn-success btn-block">Logout</button>
-              </div>
-            </div><!-- /Grupo de botões 3 -->
+           <c:import url="menulateral.jsp" />
+           
           </div><!-- /Menu lateral -->
         </div><!-- /Sidebar -->
 
 
-        <!-- Conteudo -->
+        <!-- Conte�do -->
         <div id="conteudo" class="col-xs-9 col-md-9">
 
           <!--Lista de Jogos -->
@@ -143,13 +87,13 @@
                   </ul>
                 </div><!-- /Filtro por plataformas-->
 
-                <!-- Filtros por genêros -->
+                <!-- Filtros por gen�ros -->
                 <div class="btn-group">
                   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Genêros <span class="caret"></span>
+                    Gen�ros <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Genêros</a></li>
+                    <li><a href="#">Gen�ros</a></li>
                     <li><a href="#">Ação</a></li>
                     <li><a href="#">Aventura</a></li>
                     <li><a href="#">Corrida</a></li>
@@ -163,17 +107,17 @@
                   </ul>
                 </div><!-- /Filtro por genêros-->
 
-                <!-- Filtros por relevância -->
+                <!-- Filtros por relev�ncia -->
                 <div class="btn-group">
                   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Relevância <span class="caret"></span>
+                    Relev�ncia <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Relevância</a></li>
+                    <li><a href="#">Relev�ncia</a></li>
                     <li><a href="#">Ano</a></li>
                     <li><a href="#">Nota</a></li>
                   </ul>
-                </div><!-- /Filtro por relevância-->
+                </div><!-- /Filtro por relev�ncia-->
               </div><!-- /Barra de filtro -->
             </form>
 
@@ -194,7 +138,7 @@
                   <h4 class="text-center">Nome do Jogo</h4>
                 </div><!-- /Dados do jogo -->
 
-                <!-- Botão para adicionar -->
+                <!-- Bot�o para adicionar -->
                 <div>
                   <button type="button" class="btn btn-success btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Adicionar <span class="caret"></span>
@@ -205,11 +149,11 @@
                     <li><a href="#">Jogando</a></li>
                     <li><a href="#">Terminei</a></li>
                   </ul>
-                </div><!-- Botão para adicionar -->
+                </div><!-- Bot�o para adicionar -->
               </div><!-- Jogo -->
             </div>
           </div><!-- /Lista de Jogos -->
-        </div> <!-- /Conteudo -->
+        </div> <!-- /Conte�do -->
       </div> <!-- /Esqueleto -->
     </div> <!-- /Container-fluid -->
 

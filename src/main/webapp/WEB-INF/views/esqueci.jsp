@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Cadastro</title>
 
     <!-- Bootstrap -->
@@ -35,9 +36,9 @@
         </form>
         <br>
         <br>
-        <p > JÃ¡ faz parte da party? <a href="login.html">Entre logo!</a> </p>
+        <p > Já faz parte da party? <a href="login.html">Entre logo!</a> </p>
         <br>
-        <p > NÃ£o faz parte da party? <a href="cadastro.html">Cadastre-se logo!</a> </p>
+        <p > Não faz parte da party? <a href="cadastro.html">Cadastre-se logo!</a> </p>
       </div>
     </div> <!-- /container -->
 
