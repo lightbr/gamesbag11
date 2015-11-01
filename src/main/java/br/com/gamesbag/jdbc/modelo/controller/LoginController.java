@@ -19,7 +19,7 @@ public class LoginController {
 	 
 	 @RequestMapping("efetuaLogin")
 	 public String efetuaLogin(Pessoa pessoa, HttpSession session) {
-	   if(new PessoaDao().existePessoa(pessoa)) {
+	   if(new PessoaDao().existePessoa(pessoa) != null) {
 	     session.setAttribute("pessoaLogada", pessoa);
 	     return "home";
 	   }

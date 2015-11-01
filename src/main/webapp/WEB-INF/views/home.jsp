@@ -30,6 +30,11 @@
 
   <body class="bg-warning">
 
+	<h1>${pessoaLogada.idPessoa}</h1>
+	<h1>${pessoaLogada.username}</h1>
+	<h1>${pessoaLogada.email}</h1>
+	<h1>${pessoaLogada.senha}</h1>
+	
     <!-- Container-fluid -->
     <div class="container-fluid">
 
@@ -284,7 +289,7 @@
                 
                 <!-- Dados da pessoa -->
                 <div>
-                  <h4 class="text-center">Nome da Pessoa</h4>
+                  <h4 class="text-center">Nome do Usuário</h4>
                 </div><!-- /Dados da pessoa -->
 
                 

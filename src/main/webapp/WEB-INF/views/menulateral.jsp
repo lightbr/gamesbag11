@@ -30,10 +30,14 @@
             <!-- Foto de perfil -->
             <div>
               <a href="#" class="thumbnail">
-                <img src="..." alt="Photo Perfil" style="min-height:250px;height:250px">
+                <img src="resources/img/${pessoaLogada.idPessoa}.png" alt="Photo Perfil" style="min-height:250px;height:250px">
               </a>
             </div>
-
+			
+			<div>
+              <h2 class="text-center" style="color:#3c763d">${pessoaLogada.username}</h2>
+            </div>
+			
             <!-- Grupo de botões 1 -->
             <div class="panel panel-success">
               <div class="panel-heading">Lista de Jogos</div>
