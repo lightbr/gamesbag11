@@ -43,11 +43,12 @@ public final class PessoaDao {
 		}
 	}
 
-	public List<Pessoa> getLista() {
+	public List<Pessoa> getLista(String busca) {
 		try {
 			List<Pessoa> pessoas = new ArrayList<Pessoa>();
 			PreparedStatement stmt = this.connection.
-					prepareStatement("select * from pessoa");
+					prepareStatement("select * from pessoa where username like ?");
+			stmt.setString(1, busca + "%");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

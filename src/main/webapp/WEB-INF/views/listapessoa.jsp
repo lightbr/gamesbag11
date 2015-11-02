@@ -68,14 +68,14 @@
             <div class="panel-body">
 
             <!-- Barra de filtro -->
-            <form class="form-inline">
+            <form class="form-inline" action="listaPessoas">
               <div>
 
                 <!-- Busca por nome -->
                 <div class="input-group col-md-3">
-                  <input type="text" class="form-control" placeholder="Procurar na Lista">
+                  <input type="text" id="inputBusca" name="busca" class="form-control" placeholder="Procurar na Lista">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Buscar</button>
+                    <button class="btn btn-default" type="submit">Buscar</button>
                   </span>
                 </div><!-- /Busca por nome -->
               </div>

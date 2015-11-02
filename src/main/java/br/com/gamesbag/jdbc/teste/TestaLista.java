@@ -12,7 +12,7 @@ public class TestaLista {
 
 		PessoaDao dao = new PessoaDao();
 
-		List<Pessoa> pessoas = dao.getLista();
+		List<Pessoa> pessoas = dao.getLista("");
 
 		for (Pessoa pessoa : pessoas) {
 			System.out.println("Nome: " + pessoa.getUsername());

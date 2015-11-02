@@ -65,7 +65,7 @@
                 <p>
                   <button type="button" class="btn btn-success btn-block">Seguidores</button>
                 </p>
-                <button type="button" class="btn btn-success btn-block">Buscar Usuários</button>
+                <a href="listaPessoas" class="btn btn-success btn-block" role="button">Buscar Usuário</a>
               </div>
             </div> <!-- /Grupo de botões 2 -->
 
