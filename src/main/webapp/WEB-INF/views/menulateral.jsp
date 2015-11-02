@@ -30,7 +30,7 @@
             <!-- Foto de perfil -->
             <div>
               <a href="#" class="thumbnail">
-                <img src="resources/img/${pessoaLogada.idPessoa}.png" alt="Photo Perfil" style="min-height:250px;height:250px">
+                <img src="resources/img/${pessoaLogada.idPessoa}.jpg" alt="Photo Perfil" style="min-height:250px;height:250px">
               </a>
             </div>
 			
