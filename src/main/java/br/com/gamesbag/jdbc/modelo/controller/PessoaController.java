@@ -28,5 +28,11 @@ public class PessoaController {
 	  model.addAttribute("pessoas", dao.getLista(busca));
 	  return "listapessoa";
 	}
-
+	
+	@RequestMapping("usuario")
+	  public String usuario(Model model, String id) {
+		PessoaDao dao = new PessoaDao();
+		model.addAttribute("usuario", dao.getPessoa(id));
+	    return "pessoa";
+	  }
 }

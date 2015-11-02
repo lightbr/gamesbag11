@@ -101,30 +101,6 @@ public final class PessoaDao {
 		}
 	}
 
-
-
-	/*public boolean existePessoa(Pessoa pessoa) {
-
-		if(pessoa == null) {
-			throw new IllegalArgumentException("Usuário não deve ser nulo");
-		}
-
-		try {
-			PreparedStatement stmt = this.connection.prepareStatement("select * from pessoa where email = ? and senha = ?");
-			stmt.setString(1, pessoa.getEmail());
-			stmt.setString(2, pessoa.getSenha());
-			ResultSet rs = stmt.executeQuery();
-
-			boolean encontrado = rs.next();
-			rs.close();
-			stmt.close();
-
-			return encontrado;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-	}*/
-
 	public Pessoa existePessoa(Pessoa pessoa) {
 
 		if(pessoa == null) {
@@ -161,8 +137,31 @@ public final class PessoaDao {
         } catch (Exception e) {  
         	throw new RuntimeException(e);    
         }  
-          
-       
+           
+		
     }  
+	
+	public Pessoa getPessoa(String id) {
+		try {
+			Pessoa pessoa = new Pessoa();
+			PreparedStatement stmt = this.connection.
+					prepareStatement("select * from pessoa where idPessoa = ?");
+			stmt.setString(1, id);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				// criando o objeto Pessoa
+				pessoa.setIdPessoa(rs.getInt("idpessoa"));
+				pessoa.setUsername(rs.getString("username"));
+				pessoa.setEmail(rs.getString("email"));
+				pessoa.setSenha(rs.getString("senha"));
+			}
+			rs.close();
+			stmt.close();
+			return pessoa;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
   
 } 

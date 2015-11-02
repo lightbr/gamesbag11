@@ -27,6 +27,11 @@
   </head>
 
   <body class="bg-warning">
+  
+  	<h1>${pessoaLogada.idPessoa}</h1>
+	<h1>${pessoaLogada.username}</h1>
+	<h1>${pessoaLogada.email}</h1>
+	<h1>${pessoaLogada.senha}</h1>
 
     <!-- Container-fluid -->
     <div class="container-fluid">
@@ -59,20 +64,20 @@
 
             <!-- Nome do usu·rio -->
           <div class="col-xs-9 col-md-9">
-            <h1>Nome do Usu√°rio</h1>
-          </div><!-- /Nome do usu√°rio -->
+            <h1>${usuario.username}</h1>
+          </div><!-- /Nome do usu·rio -->
 
           <!-- Foto do usu·rio -->
           <div class="col-xs-3 col-md-3">
             <a href="#" class="thumbnail">
-              <img src="..." alt="Photo Perfil" style="min-height:200px;height:200px">
+              <img src="resources/img/${usuario.idPessoa}.jpg" alt="Photo Perfil" style="min-height:200px;height:200px">
             </a>
           </div><!-- Foto do usu·rio -->
 
             <!-- Bot„o para seguir -->
           <div class="col-xs-3 col-md-3 col-md-offset-9">
             <input class="btn btn-warning btn-block" type="button" value="Seguir">
-          </div><!-- /Bot√£o para seguir -->
+          </div><!-- /Bot„oo para seguir -->
 
           <!-- Lista de jogos do usu·rio -->
           <div>
