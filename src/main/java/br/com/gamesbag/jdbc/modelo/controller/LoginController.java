@@ -21,7 +21,7 @@ public class LoginController {
 	 public String efetuaLogin(Pessoa pessoa, HttpSession session) {
 	   if(new PessoaDao().existePessoa(pessoa) != null) {
 	     session.setAttribute("pessoaLogada", pessoa);
-	     return "home";
+	     return "redirect:principal";
 	   }
 	   return "redirect:loginForm";
 	 }
