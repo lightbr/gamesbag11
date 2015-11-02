@@ -91,7 +91,7 @@
 	
 	                <!-- Foto da pessoa -->
 	                <div>
-	                  <a href="#" class="miniatura">
+	                  <a href="#" class="thumbnail">
 	                    <img src="resources/img/${pessoa.idPessoa}.jpg" alt="Photo Pessoa" style="min-height:150px;height:150px">
 	                  </a>
 	                </div><!-- /Foto da pessoa -->

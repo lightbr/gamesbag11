@@ -31,4 +31,9 @@ public class LoginController {
 	   session.invalidate();
 	   return "redirect:loginForm";
 	 }
+	 
+	 @RequestMapping("principal")
+	  public String principal() {
+	    return "home";
+	  }
 }

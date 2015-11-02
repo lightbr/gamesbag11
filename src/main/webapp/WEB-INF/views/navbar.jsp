@@ -31,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="google.com">Games Bag</a>
+          <a class="navbar-brand" href="principal">Games Bag</a>
         </div>
         <div class="collapse navbar-collapse navbar-center" id="bs-example-navbar-collapse-1">
           <form class="navbar-form" role="search">
