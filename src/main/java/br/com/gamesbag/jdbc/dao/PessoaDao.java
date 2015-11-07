@@ -141,12 +141,12 @@ public final class PessoaDao {
 		
     }  
 	
-	public Pessoa getPessoa(String id) {
+	public Pessoa getPessoa(int id) {
 		try {
 			Pessoa pessoa = new Pessoa();
 			PreparedStatement stmt = this.connection.
 					prepareStatement("select * from pessoa where idPessoa = ?");
-			stmt.setString(1, id);
+			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -164,4 +164,134 @@ public final class PessoaDao {
 		}
 	}
   
+	
+	
+	public void seguir(int idSeguindo, int idSeguidor) {
+		String sql = "insert into relacionamento " +
+				"(idseguindo,idseguidor)" +
+				" values (?,?)";
+
+		try {
+			// prepared statement para inserção
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			// seta os valores
+			stmt.setInt(1,idSeguindo);
+			stmt.setInt(2,idSeguidor);
+			
+
+			// executa
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void deseguir(int idSeguindo, int idSeguidor) {
+		try {
+			PreparedStatement stmt = connection
+					.prepareStatement("delete from relacionamento where idseguindo=? and idseguidor=?");
+			stmt.setInt(1, idSeguindo);
+			stmt.setInt(2, idSeguidor);
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	
+	public boolean existeRelacionamento(int idSeguindo, int idSeguidor) {
+
+
+		try {
+			PreparedStatement stmt = this.connection.prepareStatement("select * from relacionamento where idseguindo=? and idseguidor=?");
+			stmt.setInt(1, idSeguindo);
+			stmt.setInt(2, idSeguidor);
+			ResultSet rs = stmt.executeQuery();
+
+			if(rs.next())  
+            {  
+				stmt.close();
+				rs.close();
+				return true;
+            }  
+            else  
+            {  
+            	stmt.close();
+    			rs.close();
+                return false;  
+            }
+			
+        } catch (Exception e) {  
+        	throw new RuntimeException(e);    
+        }  
+           
+    }  
+	
+	
+	
+	public List<Pessoa> getSeguido(int idSeguidor) {
+		try {
+			List<Pessoa> pessoas = new ArrayList<Pessoa>();
+			PreparedStatement stmt = this.connection.
+					prepareStatement("select * from pessoa inner join relacionamento "
+							+ "on pessoa.idPessoa = relacionamento.idSeguindo "
+							+ "where relacionamento.idSeguidor = ?");
+			stmt.setInt(1, idSeguidor);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				// criando o objeto Pessoa
+				Pessoa pessoa = new Pessoa();
+				pessoa.setIdPessoa(rs.getInt("idpessoa"));
+				pessoa.setUsername(rs.getString("username"));
+				pessoa.setEmail(rs.getString("email"));
+				pessoa.setSenha(rs.getString("senha"));
+
+
+				// adicionando o objeto à lista
+				pessoas.add(pessoa);
+			}
+			rs.close();
+			stmt.close();
+			return pessoas;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public List<Pessoa> getSeguidor(int idSeguido) {
+		try {
+			List<Pessoa> pessoas = new ArrayList<Pessoa>();
+			PreparedStatement stmt = this.connection.
+					prepareStatement("select * from pessoa inner join relacionamento "
+							+ "on pessoa.idPessoa = relacionamento.idSeguidor "
+							+ "where relacionamento.idSeguindo = ?");
+			stmt.setInt(1, idSeguido);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				// criando o objeto Pessoa
+				Pessoa pessoa = new Pessoa();
+				pessoa.setIdPessoa(rs.getInt("idpessoa"));
+				pessoa.setUsername(rs.getString("username"));
+				pessoa.setEmail(rs.getString("email"));
+				pessoa.setSenha(rs.getString("senha"));
+
+
+				// adicionando o objeto à lista
+				pessoas.add(pessoa);
+			}
+			rs.close();
+			stmt.close();
+			return pessoas;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	
+	
 } 

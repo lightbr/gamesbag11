@@ -32,6 +32,7 @@
 	<h1>${pessoaLogada.username}</h1>
 	<h1>${pessoaLogada.email}</h1>
 	<h1>${pessoaLogada.senha}</h1>
+	<h1>${relacionamento}</h1>
 
     <!-- Container-fluid -->
     <div class="container-fluid">
@@ -73,12 +74,21 @@
               <img src="resources/img/${usuario.idPessoa}.jpg" alt="Photo Perfil" style="min-height:200px;height:200px">
             </a>
           </div><!-- Foto do usuário -->
-
+          
+			<c:if test="${relacionamento == 'false'}">
             <!-- Botão para seguir -->
           <div class="col-xs-3 col-md-3 col-md-offset-9">
-            <input class="btn btn-warning btn-block" type="button" value="Seguir">
-          </div><!-- /Botãoo para seguir -->
-
+            <a href="seguirPessoa?id=${usuario.idPessoa}" class="btn btn-success btn-block" role="button">Seguir</a>
+          </div><!-- /Botão para seguir -->
+			</c:if>
+			
+			<c:if test="${relacionamento == 'true'}">
+            <!-- Botão para deseguir -->
+          <div class="col-xs-3 col-md-3 col-md-offset-9">
+            <a href="deseguirPessoa?id=${usuario.idPessoa}" class="btn btn-warning btn-block" role="button">Parar de Seguir</a>
+          </div><!-- /Botão para deseguir -->
+			</c:if>
+			
           <!-- Lista de jogos do usuário -->
           <div>
             <ul class="nav nav-tabs">

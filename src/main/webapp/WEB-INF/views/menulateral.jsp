@@ -60,10 +60,10 @@
               <div class="panel-heading">Lista de Usuário</div>
               <div class="panel-body">
                 <p>
-                  <button type="button" class="btn btn-success btn-block">Seguindo</button>
+                  <a href="listaSeguido" class="btn btn-success btn-block" role="button">Seguindo</a>
                 </p>
                 <p>
-                  <button type="button" class="btn btn-success btn-block">Seguidores</button>
+                  <a href="listaSeguidor" class="btn btn-success btn-block" role="button">Seguidores</a>
                 </p>
                 <a href="listaPessoas" class="btn btn-success btn-block" role="button">Buscar Usuário</a>
               </div>
