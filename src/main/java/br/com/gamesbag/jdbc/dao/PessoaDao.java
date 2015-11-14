@@ -66,6 +66,7 @@ public final class PessoaDao {
 			rs.close();
 			stmt.close();
 			return pessoas;
+			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
