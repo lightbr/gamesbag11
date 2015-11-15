@@ -58,11 +58,11 @@
 
           <!-- Dados do jogo -->
           <div class="col-xs-9 col-md-9">
-            <h1>Nome do Jogo</h1>
-            <h3>Plataformas:<small>...</small> Desenvolvedora:<small>...</small></h3>
-            <h3>Data de Lançamento:<small>...</small> Produtora:<small>...</small></h3>
-            <h3>Gênero:<small>...</small> Rating:<small>...</small></h3>
-            <h3>Metacritic:<span class="label label-success">0</span> Notas do usuário:<span class="label label-success">0</span></h3>
+            <h1>${jogo.gameTitle}</h1>
+            <h3>Plataformas:<small>${jogo.platform}</small> Desenvolvedora:<small>${jogo.developer}</small></h3>
+            <h3>Data de Lançamento:<small>${jogo.releaseDate}</small> Produtora:<small>${jogo.publisher}</small></h3>
+            <h3>Gênero:<small>${jogo.genre}</small> ESRB:<small>${jogo.esrb}</small></h3>
+            <h3>Rating:<span class="label label-success">${jogo.rating}</span> Notas do usuário:<span class="label label-success">0</span></h3>
             <h3>De sua nota:</h3>
 
             <!-- Sistema de notas -->
@@ -80,17 +80,17 @@
               <button type="button" class="btn btn-warning">10</button>
             </div><!-- /Sistema de notas -->
             <h3>Sinopse</h3>
-            <p>...</p>
+            <p>${jogo.overview}</p>
           </div><!-- /Dados do jogo -->
           
           <!-- Foto do jogo -->
           <div class="col-xs-3 col-md-3">
             <a href="#" class="thumbnail">
-              <img src="..." alt="Photo Perfil" style="min-height:300px;height:300px">
+              <img src="http://thegamesdb.net/banners/${jogo.boxArt}" alt="Photo Perfil" style="min-height:300px;height:300px">
             </a>
           </div><!-- Foto do jogo -->
 
-          <!-- BotÃ£o para adicionar -->
+          <!-- Botão para adicionar -->
           <div class="col-xs-3 col-md-3" >
             <button type="button" class="btn btn-warning btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Adicionar <span class="caret"></span>

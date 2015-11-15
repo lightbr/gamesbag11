@@ -2,9 +2,9 @@ package br.com.gamesbag.jdbc.modelo;
 
 public class Jogo {
 	
-	private int idJogo;
+	private String idJogo;
 	private String gameTitle;
-	private int platformId;
+	private String platformId;
 	private String platform;
 	private String releaseDate;
 	private String overview;
@@ -13,12 +13,13 @@ public class Jogo {
 	private String developer;
 	private String rating;
 	private String boxArt;
+	private String genre;
 	
 	
-	public int getIdJogo() {
+	public String getIdJogo() {
 		return idJogo;
 	}
-	public void setIdJogo(int idJogo) {
+	public void setIdJogo(String idJogo) {
 		this.idJogo = idJogo;
 	}
 	public String getGameTitle() {
@@ -27,10 +28,10 @@ public class Jogo {
 	public void setGameTitle(String gameTitle) {
 		this.gameTitle = gameTitle;
 	}
-	public int getPlatformId() {
+	public String getPlatformId() {
 		return platformId;
 	}
-	public void setPlatformId(int platformId) {
+	public void setPlatformId(String platformId) {
 		this.platformId = platformId;
 	}
 	public String getPlatform() {
@@ -82,7 +83,13 @@ public class Jogo {
 		this.boxArt = boxArt;
 	}
 	
+	public String getGenre() {
+		return genre;
+	}
 	
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 }
 
 

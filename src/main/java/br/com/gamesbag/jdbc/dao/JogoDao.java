@@ -1,8 +1,5 @@
 package br.com.gamesbag.jdbc.dao;
 
-
-
-
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -15,6 +12,7 @@ import java.util.List;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
+import org.jdom2.Namespace;
 import org.jdom2.input.SAXBuilder;
 
 import br.com.gamesbag.jdbc.modelo.Jogo;
@@ -24,9 +22,11 @@ public final class JogoDao {
 
 	private final String USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36";
 
-	public void getJogo() throws IOException {
-
-		String urlString = "http://thegamesdb.net/api/GetGame.php?id=2";
+	public Jogo getJogo(int id) throws IOException {
+		
+		Jogo jogo = new Jogo();
+		
+		String urlString = "http://thegamesdb.net/api/GetGame.php?id=" + id;
 		
 		URL url = new URL(urlString);
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -67,24 +67,30 @@ public final class JogoDao {
 		try {
 			Document document = (Document) builder.build(stream);
 			Element rootNode = document.getRootElement();
-			List<Element> list = rootNode.getChildren("Game");
-
-			for (int i = 0; i < list.size(); i++) {
-
-				Element node = (Element) list.get(i);
-
-				System.out.println("GameTitle : " + node.getChildText("GameTitle"));
-				System.out.println("id : " + node.getChildText("id"));
-				System.out.println("Paltaform : " + node.getChildText("Platform"));
-				System.out.println("PlataformId : " + node.getChildText("PlatformId"));
-
-			}
+			Element game = rootNode.getChild("Game");
+			Element genres = game.getChild("Genres");
+			Element images = game.getChild("Images");
+			List<Element> boxart = images.getChildren("boxart");
+			Element thumb = boxart.get(1);
+			
+				jogo.setIdJogo(game.getChildText("id"));
+				jogo.setGameTitle(game.getChildText("GameTitle"));
+				jogo.setPlatform(game.getChildText("Platform"));
+				jogo.setDeveloper(game.getChildText("Developer"));
+				jogo.setReleaseDate(game.getChildText("ReleaseDate"));
+				jogo.setPublisher(game.getChildText("Publisher"));
+				jogo.setGenre(genres.getChildText("genre"));
+				jogo.setEsrb(game.getChildText("ESRB"));
+				jogo.setRating(game.getChildText("Rating"));
+				jogo.setOverview(game.getChildText("Overview"));
+				jogo.setBoxArt(thumb.getAttributeValue("thumb"));
 
 		} catch (IOException io) {
 			System.out.println(io.getMessage());
 		} catch (JDOMException jdomex) {
 			System.out.println(jdomex.getMessage());
 		}
+		return jogo;
 	}
 }
 

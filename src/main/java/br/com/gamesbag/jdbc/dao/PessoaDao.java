@@ -150,7 +150,7 @@ public final class PessoaDao {
 			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 
-			while (rs.next()) {
+			if (rs.next()) {
 				// criando o objeto Pessoa
 				pessoa.setIdPessoa(rs.getInt("idpessoa"));
 				pessoa.setUsername(rs.getString("username"));
