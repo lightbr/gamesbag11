@@ -86,7 +86,7 @@
           <!-- Foto do jogo -->
           <div class="col-xs-3 col-md-3">
             <a href="#" class="thumbnail">
-              <img src="http://thegamesdb.net/banners/boxart/original/front/${jogo.idJogo}-1.jpg" alt="Photo Perfil" style="min-height:300px;height:300px">
+              <img src="http://thegamesdb.net/banners/${jogo.boxArt}" alt="Photo Perfil" style="min-height:300px;height:300px">
             </a>
           </div><!-- Foto do jogo -->
 

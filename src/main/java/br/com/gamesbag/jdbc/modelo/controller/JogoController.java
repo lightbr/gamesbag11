@@ -13,7 +13,7 @@ import br.com.gamesbag.jdbc.dao.JogoDao;
 public class JogoController {
 	
 	@RequestMapping("jogo")
-	  public String usuario(Model model, int id) throws IOException {
+	  public String jogo(Model model, int id) throws IOException {
 		JogoDao dao = new JogoDao();
 		model.addAttribute("jogo", dao.getJogo(id));
 	    return "jogo";

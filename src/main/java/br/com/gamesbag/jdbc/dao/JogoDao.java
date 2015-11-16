@@ -69,7 +69,9 @@ public final class JogoDao {
 			Element rootNode = document.getRootElement();
 			Element game = rootNode.getChild("Game");
 			Element genres = game.getChild("Genres");
-
+			Element images = game.getChild("Images");
+			List<Element> list = images.getChildren("boxart");
+			
 			jogo.setIdJogo(game.getChildText("id"));
 			jogo.setGameTitle(game.getChildText("GameTitle"));
 			jogo.setPlatform(game.getChildText("Platform"));
@@ -80,6 +82,15 @@ public final class JogoDao {
 			jogo.setEsrb(game.getChildText("ESRB"));
 			jogo.setRating(game.getChildText("Rating"));
 			jogo.setOverview(game.getChildText("Overview"));
+			if(list.size() == 2){
+				Element boxart = (Element) list.get(1);
+				jogo.setBoxArt(boxart.getAttributeValue("thumb"));
+				//jogo.setBoxArt(boxart.getChildText("boxart"));
+			}else{
+				Element boxart = (Element) list.get(0);
+				jogo.setBoxArt(boxart.getAttributeValue("thumb"));
+				//jogo.setBoxArt(boxart.getChildText("boxart"));
+			}
 
 		} catch (IOException io) {
 			System.out.println(io.getMessage());
