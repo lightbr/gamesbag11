@@ -34,9 +34,9 @@
           <a class="navbar-brand" href="principal">Games Bag</a>
         </div>
         <div class="collapse navbar-collapse navbar-center" id="bs-example-navbar-collapse-1">
-          <form class="navbar-form" role="search">
+          <form class="navbar-form" role="search" action="listaJogos">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Buscar no Games Bag">
+              <input type="text" id="inputBusca" name="busca" class="form-control" placeholder="Buscar no Games Bag">
             </div>
             <button type="submit" class="btn btn-success">Buscar</button>
           </form>

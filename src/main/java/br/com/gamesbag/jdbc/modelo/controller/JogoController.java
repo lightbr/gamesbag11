@@ -19,4 +19,11 @@ public class JogoController {
 	    return "jogo";
 	  }
 	
+	@RequestMapping("listaJogos")
+	public String lista(Model model, String busca) throws IOException {
+	  JogoDao dao = new JogoDao();
+	  model.addAttribute("jogos", dao.getLista(busca));
+	  return "listajogo";
+	}
+	
 }

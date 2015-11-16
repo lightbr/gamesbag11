@@ -63,12 +63,12 @@
             <div class="panel-body">
 
             <!-- Barra de filtro -->
-            <form class="form-inline">
+            <form class="form-inline" action="listaJogos">
               <div>
 
                 <!-- Busca por nome -->
                 <div class="input-group col-md-3">
-                  <input type="text" class="form-control" placeholder="Procurar na Lista">
+                  <input type="text" id="inputBusca" name="busca" class="form-control" placeholder="Procurar na Lista">
                   <span class="input-group-btn">
                     <button class="btn btn-success" type="button">Buscar</button>
                   </span>
@@ -93,58 +93,60 @@
                   </ul>
                 </div><!-- /Filtro por plataformas-->
 
-                <!-- Filtros por genÃªros -->
+                <!-- Filtros por genêros -->
                 <div class="btn-group">
                   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    GenÃªros <span class="caret"></span>
+                    Genêros <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">GenÃªros</a></li>
-                    <li><a href="#">AÃ§Ã£o</a></li>
+                    <li><a href="#">Genêros</a></li>
+                    <li><a href="#">Ação</a></li>
                     <li><a href="#">Aventura</a></li>
                     <li><a href="#">Corrida</a></li>
                     <li><a href="#">Tiro</a></li>
                     <li><a href="#">RPG</a></li>
                     <li><a href="#">Luta</a></li>
-                    <li><a href="#">EstratÃ©gia</a></li>
+                    <li><a href="#">Estratégia</a></li>
                     <li><a href="#">Terror</a></li>
                     <li><a href="#">Plataforma</a></li>
                     <li><a href="#">Puzzle</a></li>
                   </ul>
-                </div><!-- /Filtro por genÃªros-->
+                </div><!-- /Filtro por genêros-->
 
-                <!-- Filtros por relevÃ¢ncia -->
+                <!-- Filtros por relevância -->
                 <div class="btn-group">
                   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    RelevÃ¢ncia <span class="caret"></span>
+                    Relevância <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">RelevÃ¢ncia</a></li>
+                    <li><a href="#">Relevância</a></li>
                     <li><a href="#">Ano</a></li>
                     <li><a href="#">Nota</a></li>
                   </ul>
-                </div><!-- /Filtro por relevÃ¢ncia-->
+                </div><!-- /Filtro por relevância-->
               </div><!-- /Barra de filtro -->
             </form>
 
             <br>
 
+			<c:forEach var="jogo" items="${jogos}">
+			
             <!-- Jogo -->
             <div class="col-xs-2 col-md-2">
 
                 <!-- Foto do jogo -->
                 <div>
-                  <a href="#" class="miniatura">
-                    <img src="..." alt="Photo Jogo" style="min-height:150px;height:150px">
+                  <a href="jogo?id=${jogo.idJogo}" class="thumbnail">
+                    <img src="http://thegamesdb.net/banners/boxart/original/front/${jogo.idJogo}-1.jpg" alt="Photo Jogo" style="min-height:150px;height:150px">
                   </a>
                 </div><!-- Foto do jogo -->
                 
                 <!-- Dados do jogo -->
                 <div>
-                  <h4 class="text-center">Nome do Jogo</h4>
+                  <h4 class="text-center">${jogo.gameTitle}</h4>
                 </div><!-- /Dados do jogo -->
 
-                <!-- BotÃ£o para adicionar -->
+                <!-- Botãoo para adicionar -->
                 <div>
                   <button type="button" class="btn btn-warning btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Adicionar <span class="caret"></span>
@@ -155,8 +157,9 @@
                     <li><a href="#">Jogando</a></li>
                     <li><a href="#">Terminei</a></li>
                   </ul>
-                </div><!-- BotÃ£o para adicionar -->
+                </div><!-- Botão para adicionar -->
               </div><!-- Jogo -->
+              </c:forEach>
             </div>
           </div><!-- /Lista de Jogos -->
         </div> <!-- /Conteudo -->
