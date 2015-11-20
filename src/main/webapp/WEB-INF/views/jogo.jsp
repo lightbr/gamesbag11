@@ -31,6 +31,13 @@
     <!-- Container-fluid -->
     <div class="container-fluid">
 
+
+<h3>${listado.quero}</h3>
+<h3>${listado.joguei}</h3>
+<h3>${listado.jogando}</h3>
+<h3>${listado.terminei}</h3>
+
+
       <!-- Navbar -->
       <nav class="navbar navbar-success">
        
@@ -90,18 +97,92 @@
             </a>
           </div><!-- Foto do jogo -->
 
-          <!-- Botão para adicionar -->
-          <div class="col-xs-3 col-md-3" >
-            <button type="button" class="btn btn-warning btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Adicionar <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Quero Jogar</a></li>
-              <li><a href="#">Joguei</a></li>
-              <li><a href="#">Jogando</a></li>
-              <li><a href="#">Terminei</a></li>
-            </ul>
-          </div><!-- Botão para adicionar -->
+
+		<!-- Se NÃO existir na tabela mostra apenas opções de adicionar -->
+		<c:choose>
+			<c:when test="${listado == null || (listado.quero == 0 && listado.joguei == 0 && listado.jogando == 0 && listado.terminei == 0) == true}">
+
+				<!-- Botão para adicionar -->
+				<div class="col-xs-3 col-md-3">
+					<button type="button"
+						class="btn btn-warning btn-block dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+						Adicionar <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=quero">Quero Jogar</a></li>
+						<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=joguei">Joguei</a></li>
+						<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=jogando">Jogando</a></li>
+						<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=terminei">Terminei</a></li>
+					</ul>
+				</div>
+				<!-- Botão para adicionar -->
+
+			</c:when>
+			
+			<c:otherwise>
+			<!-- Se existir na tabela mostra apenas opções de adicionar -->
+
+				<!-- Botão para adicionar -->
+				<div class="col-xs-3 col-md-3">
+					<button type="button"
+						class="btn btn-success btn-block dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+						Adicionar <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+
+						<c:if test="${listado.quero == 0}">
+							<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=quero">Quero Jogar</a></li>
+						</c:if>
+						<c:if test="${listado.quero == 1}">
+							<li><a href="removeJogo?idJogo=${jogo.idJogo}&lista=quero">Quero Jogar
+								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a></li>
+						</c:if>
+						
+						<c:if test="${listado.joguei == 0}">
+							<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=joguei">Joguei</a></li>
+						</c:if>
+						<c:if test="${listado.joguei == 1}">
+							<li><a href="removeJogo?idJogo=${jogo.idJogo}&lista=joguei">Joguei
+								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a></li>
+						</c:if>
+						
+						<c:if test="${listado.jogando == 0}">
+							<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=jogando">Jogando</a></li>
+						</c:if>
+						<c:if test="${listado.jogando == 1}">
+							<li><a href="removeJogo?idJogo=${jogo.idJogo}&lista=jogando">Jogando
+								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a></li>
+						</c:if>
+						
+						<c:if test="${listado.terminei == 0}">
+							<li><a href="addJogo?idJogo=${jogo.idJogo}&lista=terminei">Terminei</a></li>
+						</c:if>
+						<c:if test="${listado.terminei == 1}">
+							<li><a href="removeJogo?idJogo=${jogo.idJogo}&lista=terminei">Terminei
+								<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a></li>
+						</c:if>
+						
+					</ul>
+				</div>
+				<!-- Botão para adicionar -->
+
+
+
+			</c:otherwise>
+		
+		</c:choose>
+		
+  
+          
+          
+          
+          
+          
+          
         </div> <!-- /Conteúdo -->
       </div> <!-- /Esqueleto -->
     </div> <!-- /Container-fluid -->
