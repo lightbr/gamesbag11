@@ -26,13 +26,8 @@
     <![endif]-->
   </head>
 
-  <body class="bg-warning">
+  <body class="cor-fundo">
   
-  	<h1>${pessoaLogada.idPessoa}</h1>
-	<h1>${pessoaLogada.username}</h1>
-	<h1>${pessoaLogada.email}</h1>
-	<h1>${pessoaLogada.senha}</h1>
-
     <!-- Container-fluid -->
     <div class="container-fluid">
 

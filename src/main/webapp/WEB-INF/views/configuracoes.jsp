@@ -26,7 +26,7 @@
     <![endif]-->
   </head>
 
-  <body class="bg-warning">
+  <body class="cor-fundo">
 
     <!-- Container-fluid -->
     <div class="container-fluid">

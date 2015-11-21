@@ -26,12 +26,11 @@
     <![endif]-->
   </head>
 
-  <body class="bg-warning">
+  <body class="cor-fundo">
 
     <!-- Container-fluid -->
     <div class="container-fluid">
 
-<h1>${listado.idJogo}</h1>
 
       <!-- Navbar -->
       <nav class="navbar navbar-success">

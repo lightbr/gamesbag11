@@ -9,7 +9,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Login</title>
-
+	
+	<link rel="stylesheet" type="text/css" href="resources/esqueleto.css">
+	
+	
     <!-- Bootstrap -->
     <link type="text/css" href="resources/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -20,7 +23,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="bg-warning">
+  <body class="cor-fundo">
 
 
 

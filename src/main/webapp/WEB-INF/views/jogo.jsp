@@ -26,17 +26,10 @@
     <![endif]-->
   </head>
 
-  <body class="bg-warning">
+  <body class="cor-fundo">
 
     <!-- Container-fluid -->
     <div class="container-fluid">
-
-
-<h3>${listado.quero}</h3>
-<h3>${listado.joguei}</h3>
-<h3>${listado.jogando}</h3>
-<h3>${listado.terminei}</h3>
-
 
       <!-- Navbar -->
       <nav class="navbar navbar-success">
