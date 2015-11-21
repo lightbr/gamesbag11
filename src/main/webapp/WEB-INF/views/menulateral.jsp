@@ -43,15 +43,15 @@
               <div class="panel-heading">Lista de Jogos</div>
               <div class="panel-body">
                 <p>
-                  <button type="button" class="btn btn-success btn-block">Quero Jogar</button>
+                  <a href="listaAdicionado?lista=quero" class="btn btn-success btn-block" role="button">Quero Jogar</a>
                 </P>
                 <p>
-                  <button type="button" class="btn btn-success btn-block">Joguei</button>
+                  <a href="listaAdicionado?lista=joguei" class="btn btn-success btn-block" role="button">Joguei</a>
                 </p>
                 <p>
-                  <button type="button" class="btn btn-success btn-block">Jogando</button>
+                  <a href="listaAdicionado?lista=jogando" class="btn btn-success btn-block" role="button">Jogando</a>
                 </p>
-                <button type="button" class="btn btn-success btn-block">Terminei</button>
+                <a href="listaAdicionado?lista=terminei" class="btn btn-success btn-block" role="button">Terminei</a>
               </div>
             </div> <!-- /Grupo de botões 1 -->
 

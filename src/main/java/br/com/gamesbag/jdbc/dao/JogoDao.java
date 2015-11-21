@@ -71,7 +71,7 @@ public final class JogoDao {
 			Element images = game.getChild("Images");
 			List<Element> list = images.getChildren("boxart");
 			
-			jogo.setIdJogo(game.getChildText("id"));
+			jogo.setIdJogo(Integer.parseInt(game.getChildText("id")));
 			jogo.setGameTitle(game.getChildText("GameTitle"));
 			jogo.setPlatform(game.getChildText("Platform"));
 			jogo.setDeveloper(game.getChildText("Developer"));
@@ -146,7 +146,7 @@ public final class JogoDao {
 				Element game = (Element) list.get(i);
 				Jogo jogo = new Jogo();
 				
-				jogo.setIdJogo(game.getChildText("id"));
+				jogo.setIdJogo(Integer.parseInt(game.getChildText("id")));
 				jogo.setGameTitle(game.getChildText("GameTitle"));
 
 				jogos.add(jogo);

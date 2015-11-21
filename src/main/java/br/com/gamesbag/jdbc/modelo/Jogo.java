@@ -2,7 +2,7 @@ package br.com.gamesbag.jdbc.modelo;
 
 public class Jogo {
 	
-	private String idJogo;
+	private int idJogo;
 	private String gameTitle;
 	private String platformId;
 	private String platform;
@@ -16,10 +16,10 @@ public class Jogo {
 	private String genre;
 	
 	
-	public String getIdJogo() {
+	public int getIdJogo() {
 		return idJogo;
 	}
-	public void setIdJogo(String idJogo) {
+	public void setIdJogo(int idJogo) {
 		this.idJogo = idJogo;
 	}
 	public String getGameTitle() {

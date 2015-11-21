@@ -5,9 +5,11 @@ import java.io.IOException;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.gamesbag.jdbc.dao.PessoaJogoDao;
+import br.com.gamesbag.jdbc.modelo.Jogo;
 import br.com.gamesbag.jdbc.modelo.Pessoa;
 
 
@@ -36,7 +38,13 @@ public class PessoaJogoController {
 	    return path;
 	  }
 	
-	
+	@RequestMapping("listaAdicionado")
+	public String listaSeguidor(HttpSession session, Model model, String lista) throws IOException {	
+	  Pessoa pessoa = (Pessoa) session.getAttribute("pessoaLogada");
+	  PessoaJogoDao dao = new PessoaJogoDao();
+	  model.addAttribute("jogos", dao.getAdicionado(pessoa.getIdPessoa(), lista));
+	  return "listajogo";
+	}
 	
 
 }

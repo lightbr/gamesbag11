@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import br.com.gamesbag.jdbc.dao.JogoDao;
+import br.com.gamesbag.jdbc.dao.PessoaJogoDao;
 import br.com.gamesbag.jdbc.modelo.Jogo;
 import br.com.gamesbag.jdbc.modelo.Pessoa;
 
@@ -14,10 +15,10 @@ public class TestaJogo {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		JogoDao dao = new JogoDao();
+		PessoaJogoDao dao = new PessoaJogoDao();
 		//Jogo jogo = new Jogo();
 		
-		List<Jogo> jogos = dao.getLista("Zelda");
+		List<Jogo> jogos = dao.getAdicionado(3, "quero");
 		
 		for (Jogo jogo : jogos) {
 		System.out.println(jogo.getIdJogo());
