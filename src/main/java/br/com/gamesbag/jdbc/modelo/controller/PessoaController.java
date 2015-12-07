@@ -1,11 +1,14 @@
 package br.com.gamesbag.jdbc.modelo.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.gamesbag.jdbc.dao.PessoaDao;
+import br.com.gamesbag.jdbc.dao.PessoaJogoDao;
 import br.com.gamesbag.jdbc.modelo.Pessoa;
 
 @Controller
@@ -31,11 +34,16 @@ public class PessoaController {
 	}
 	
 	@RequestMapping("usuario")
-	  public String usuario(Model model, int id, HttpSession session) {
+	  public String usuario(Model model, int id, HttpSession session) throws IOException {
 		Pessoa pessoa = (Pessoa) session.getAttribute("pessoaLogada");
 		PessoaDao dao = new PessoaDao();
+		PessoaJogoDao jogodao = new PessoaJogoDao();
 		model.addAttribute("usuario", dao.getPessoa(id));
 		model.addAttribute("relacionamento", dao.existeRelacionamento(id, pessoa.getIdPessoa()));
+		model.addAttribute("jogoquero", jogodao.getAdicionado(id,"quero"));
+		model.addAttribute("jogojoguei", jogodao.getAdicionado(id,"joguei"));
+		model.addAttribute("jogojogando", jogodao.getAdicionado(id,"jogando"));
+		model.addAttribute("jogoterminei", jogodao.getAdicionado(id,"terminei"));
 	    return "pessoa";
 	  }
 	

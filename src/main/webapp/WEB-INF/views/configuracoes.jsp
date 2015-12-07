@@ -43,10 +43,10 @@
       <div id="esqueleto" class="row">
 
         <!-- Sidebar -->
-        <div id="sidebar" class="col-xs-3 col-md-3">
+        <div id="sidebar" class="col-xs-12 col-md-3">
           
           <!-- Menu-lateral -->
-          <div id="menu_lateral">
+          <div class="collapse navbar-collapse" id="menu_lateral">
 
            <c:import url="menulateral.jsp" />
            

@@ -44,10 +44,10 @@
       <div id="esqueleto" class="row">
 
         <!-- Sidebar -->
-        <div id="sidebar" class="col-xs-3 col-md-3">
+        <div id="sidebar" class="col-xs-12 col-md-3">
           
           <!-- Menu-lateral -->
-          <div id="menu_lateral">
+          <div class="collapse navbar-collapse" id="menu_lateral">
 
            <c:import url="menulateral.jsp" />
            
@@ -56,11 +56,11 @@
 
 
         <!-- Conteudo -->
-        <div id="conteudo" class="col-xs-9 col-md-9">
+        <div id="conteudo" class="col-xs-12 col-md-9">
 
           <!--Lista de Jogos -->
           <div class="panel panel-success">
-            <div class="panel-heading">...</div>
+            <div class="panel-heading">Lista</div>
             <div class="panel-body">
 
             <!-- Barra de filtro -->
@@ -133,7 +133,7 @@
 			<c:forEach var="jogo" items="${jogos}">
 			
             <!-- Jogo -->
-            <div class="col-xs-2 col-md-2">
+            <div class="col-xs-6 col-md-2">
 
                 <!-- Foto do jogo -->
                 <div>

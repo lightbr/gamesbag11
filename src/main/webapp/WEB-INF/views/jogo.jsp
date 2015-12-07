@@ -43,10 +43,10 @@
       <div id="esqueleto" class="row">
 
         <!-- Sidebar -->
-        <div id="sidebar" class="col-xs-3 col-md-3">
+        <div id="sidebar" class="col-xs-12 col-md-3">
           
           <!-- Menu-lateral -->
-          <div id="menu_lateral">
+          <div class="collapse navbar-collapse" id="menu_lateral">
 
            <c:import url="menulateral.jsp" />
            
@@ -54,7 +54,7 @@
         </div><!-- /Sidebar -->
 
         <!-- Conteúdo -->
-        <div id="conteudo" class="col-xs-9 col-md-9">
+        <div id="conteudo" class="col-xs-12 col-md-9">
 
           <!-- Dados do jogo -->
           <div class="col-xs-9 col-md-9">
@@ -84,7 +84,7 @@
           </div><!-- /Dados do jogo -->
           
           <!-- Foto do jogo -->
-          <div class="col-xs-3 col-md-3">
+          <div class="col-xs-9 col-md-3">
             <a href="#" class="thumbnail">
               <img src="http://thegamesdb.net/banners/${jogo.boxArt}" alt="Photo Perfil" style="min-height:300px;height:300px">
             </a>
@@ -96,7 +96,7 @@
 			<c:when test="${listado == null || (listado.quero == 0 && listado.joguei == 0 && listado.jogando == 0 && listado.terminei == 0) == true}">
 
 				<!-- Botão para adicionar -->
-				<div class="col-xs-3 col-md-3">
+				<div class="col-xs-9 col-md-3">
 					<button type="button"
 						class="btn btn-warning btn-block dropdown-toggle"
 						data-toggle="dropdown" aria-haspopup="true"
@@ -118,7 +118,7 @@
 			<!-- Se existir na tabela mostra apenas opções de adicionar -->
 
 				<!-- Botão para adicionar -->
-				<div class="col-xs-3 col-md-3">
+				<div class="col-xs-9 col-md-3">
 					<button type="button"
 						class="btn btn-success btn-block dropdown-toggle"
 						data-toggle="dropdown" aria-haspopup="true"
